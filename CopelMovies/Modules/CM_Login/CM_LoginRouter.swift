@@ -15,7 +15,8 @@ class CM_LoginRouter{
 extension CM_LoginRouter: CM_LoginRouterProtocol{
     func navigateToNextView() {
         if let navigationController = self.navigation{
-            //navegar a cm_movies
+            let vc = CM_MoviesMain.createModule(navigation: navigationController)
+            navigationController.pushViewController(vc, animated: true )
         }
     }
 }

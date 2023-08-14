@@ -22,6 +22,14 @@
 		CE4852AC2A8AD85900C998EC /* CMT_NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852AB2A8AD85900C998EC /* CMT_NetworkManager.swift */; };
 		CE4852AE2A8AD88B00C998EC /* CMT_ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852AD2A8AD88B00C998EC /* CMT_ActivityIndicator.swift */; };
 		CE4852B02A8AD99200C998EC /* CM_TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852AF2A8AD99200C998EC /* CM_TextField.swift */; };
+		CE4852B92A8AE29500C998EC /* CM_MoviesViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852B12A8AE29500C998EC /* CM_MoviesViewUI.swift */; };
+		CE4852BA2A8AE29500C998EC /* CM_MoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852B22A8AE29500C998EC /* CM_MoviesPresenter.swift */; };
+		CE4852BB2A8AE29500C998EC /* CM_MoviesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852B32A8AE29500C998EC /* CM_MoviesRouter.swift */; };
+		CE4852BC2A8AE29500C998EC /* CM_MoviesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852B42A8AE29500C998EC /* CM_MoviesProtocols.swift */; };
+		CE4852BD2A8AE29500C998EC /* CM_MoviesMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852B52A8AE29500C998EC /* CM_MoviesMain.swift */; };
+		CE4852BE2A8AE29500C998EC /* CM_MoviesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852B62A8AE29500C998EC /* CM_MoviesInteractor.swift */; };
+		CE4852BF2A8AE29500C998EC /* CM_MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852B72A8AE29500C998EC /* CM_MoviesView.swift */; };
+		CE4852C02A8AE29500C998EC /* CM_MoviesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852B82A8AE29500C998EC /* CM_MoviesEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +50,14 @@
 		CE4852AB2A8AD85900C998EC /* CMT_NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMT_NetworkManager.swift; sourceTree = "<group>"; };
 		CE4852AD2A8AD88B00C998EC /* CMT_ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMT_ActivityIndicator.swift; sourceTree = "<group>"; };
 		CE4852AF2A8AD99200C998EC /* CM_TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_TextField.swift; sourceTree = "<group>"; };
+		CE4852B12A8AE29500C998EC /* CM_MoviesViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_MoviesViewUI.swift; sourceTree = "<group>"; };
+		CE4852B22A8AE29500C998EC /* CM_MoviesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_MoviesPresenter.swift; sourceTree = "<group>"; };
+		CE4852B32A8AE29500C998EC /* CM_MoviesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_MoviesRouter.swift; sourceTree = "<group>"; };
+		CE4852B42A8AE29500C998EC /* CM_MoviesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_MoviesProtocols.swift; sourceTree = "<group>"; };
+		CE4852B52A8AE29500C998EC /* CM_MoviesMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_MoviesMain.swift; sourceTree = "<group>"; };
+		CE4852B62A8AE29500C998EC /* CM_MoviesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_MoviesInteractor.swift; sourceTree = "<group>"; };
+		CE4852B72A8AE29500C998EC /* CM_MoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_MoviesView.swift; sourceTree = "<group>"; };
+		CE4852B82A8AE29500C998EC /* CM_MoviesEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_MoviesEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +138,14 @@
 		CE4852942A8AD6F700C998EC /* CM_Movies */ = {
 			isa = PBXGroup;
 			children = (
+				CE4852B52A8AE29500C998EC /* CM_MoviesMain.swift */,
+				CE4852B32A8AE29500C998EC /* CM_MoviesRouter.swift */,
+				CE4852B82A8AE29500C998EC /* CM_MoviesEntity.swift */,
+				CE4852B42A8AE29500C998EC /* CM_MoviesProtocols.swift */,
+				CE4852B22A8AE29500C998EC /* CM_MoviesPresenter.swift */,
+				CE4852B62A8AE29500C998EC /* CM_MoviesInteractor.swift */,
+				CE4852B72A8AE29500C998EC /* CM_MoviesView.swift */,
+				CE4852B12A8AE29500C998EC /* CM_MoviesViewUI.swift */,
 			);
 			path = CM_Movies;
 			sourceTree = "<group>";
@@ -239,14 +263,22 @@
 				CE4852A42A8AD72100C998EC /* CM_LoginView.swift in Sources */,
 				CE4852A02A8AD72100C998EC /* CM_LoginRouter.swift in Sources */,
 				CE4852AC2A8AD85900C998EC /* CMT_NetworkManager.swift in Sources */,
+				CE4852BB2A8AE29500C998EC /* CM_MoviesRouter.swift in Sources */,
 				CE48529E2A8AD72100C998EC /* CM_LoginViewUI.swift in Sources */,
 				CE4852A22A8AD72100C998EC /* CM_LoginMain.swift in Sources */,
 				CE48529F2A8AD72100C998EC /* CM_LoginPresenter.swift in Sources */,
+				CE4852BF2A8AE29500C998EC /* CM_MoviesView.swift in Sources */,
+				CE4852BD2A8AE29500C998EC /* CM_MoviesMain.swift in Sources */,
 				CE48527D2A8AC9C100C998EC /* AppDelegate.swift in Sources */,
+				CE4852BA2A8AE29500C998EC /* CM_MoviesPresenter.swift in Sources */,
 				CE4852AE2A8AD88B00C998EC /* CMT_ActivityIndicator.swift in Sources */,
+				CE4852BE2A8AE29500C998EC /* CM_MoviesInteractor.swift in Sources */,
+				CE4852BC2A8AE29500C998EC /* CM_MoviesProtocols.swift in Sources */,
 				CE4852B02A8AD99200C998EC /* CM_TextField.swift in Sources */,
 				CE4852A52A8AD72100C998EC /* CM_LoginEntity.swift in Sources */,
 				CE4852A32A8AD72100C998EC /* CM_LoginInteractor.swift in Sources */,
+				CE4852B92A8AE29500C998EC /* CM_MoviesViewUI.swift in Sources */,
+				CE4852C02A8AE29500C998EC /* CM_MoviesEntity.swift in Sources */,
 				CE4852AA2A8AD78400C998EC /* String+Extension.swift in Sources */,
 				CE4852A12A8AD72100C998EC /* CM_LoginProtocols.swift in Sources */,
 			);

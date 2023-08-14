@@ -1,5 +1,5 @@
 //
-//  CMT_NetworkManager.swift
+//  CM_NetworkManager.swift
 //  CopelMovies
 //
 //  Created by Mac on 14/08/23.

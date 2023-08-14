@@ -1,5 +1,5 @@
 //
-//  CMT_ActivityIndicator.swift
+//  CM_ActivityIndicator.swift
 //  CopelMovies
 //
 //  Created by Mac on 14/08/23.
