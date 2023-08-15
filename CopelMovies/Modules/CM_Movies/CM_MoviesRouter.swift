@@ -20,7 +20,8 @@ extension CM_MoviesRouter: CM_MoviesRouterProtocol{
     
     func navigateMovieDetails(movieId: Int, isFavoriteMovie: Bool) {
         if let navigationController = self.navigation{
-//            //navegar a vista de detalles de pelicula
+            let vc = CM_DetailsMain.createModule(navigation: navigationController, movieId: movieId, isFavoriteMovie: isFavoriteMovie)
+            navigationController.pushViewController(vc, animated: true )
         }
     }
     func navigatePresent(delegate: CM_ProfilePresentDelegate, list: [Pelicula]) {
