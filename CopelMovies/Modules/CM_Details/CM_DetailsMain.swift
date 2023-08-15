@@ -5,7 +5,6 @@
 //  Created by Mac on 14/08/23.
 //
 
-import Foundation
 import UIKit
 
 open class CM_DetailsMain{
@@ -25,6 +24,7 @@ open class CM_DetailsMain{
             presenter.router = router
             
             router.navigation = navigation
+            router.presenter = presenter
             
             interactor.presenter = presenter
             return view

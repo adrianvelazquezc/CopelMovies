@@ -58,6 +58,10 @@ extension CM_DetailsPresenter: CM_DetailsPresenterProtocol {
         self.view?.notifyShowProfile(list: list)
     }
     
+    func requestPresent(delegate: CM_ProfilePresentDelegate, list: [Movie]) {
+        self.router?.navigatePresent(delegate: delegate, list: list)
+    }
+    
     func responseError(error: String, step: ListService) {
         self.view?.dissmissLoading()
         view?.notifyError(error: error, step: step)

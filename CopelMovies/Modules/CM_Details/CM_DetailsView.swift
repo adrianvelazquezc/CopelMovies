@@ -30,10 +30,7 @@ class CM_DetailsView: UIViewController {
 
 extension CM_DetailsView: CM_DetailsViewProtocol {
     func notifyShowProfile(list: [Movie]) {
-        let profileController = CM_ProfilePresent()
-        profileController.movieList = list
-        profileController.delegate = self
-        self.present(profileController, animated: true, completion: nil)
+        self.presenter?.requestPresent(delegate: self, list: list)
     }
     
     func notifyMovieDetails(movieDetails: MovieDetails) {
@@ -104,10 +101,8 @@ extension CM_DetailsView: CM_DetailsViewUIDelegate {
 extension CM_DetailsView: CM_ProfilePresentDelegate {
     func willDissmiss(deletedId: Set<Int>) {
         if deletedId.contains(self.movieID) {
-            
             ui?.favoriteButton.tintColor = .white
             ui?.favoriteButton.setImage(UIImage(named: "favoriteIcon"), for: .normal)
         }
-        self.presenter?.requestMovieDetails(movieId: self.movieID)
     }
 }

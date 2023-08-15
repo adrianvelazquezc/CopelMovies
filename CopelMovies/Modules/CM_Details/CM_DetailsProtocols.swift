@@ -32,8 +32,10 @@ protocol CM_DetailsPresenterProtocol: AnyObject {
     func requestFavoritesWithPresent()
     func responseFavoritesWithPresent(list: [Movie])
     func responseError(error: String, step: ListService)
+    func requestPresent(delegate: CM_ProfilePresentDelegate, list: [Movie])
 }
 
 protocol CM_DetailsRouterProtocol: AnyObject {
     func navigateCloseSession()
+    func navigatePresent(delegate: CM_ProfilePresentDelegate, list: [Movie])
 }
