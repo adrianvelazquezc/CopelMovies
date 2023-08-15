@@ -15,7 +15,7 @@ class CM_ProfilePresent: UIViewController {
     public var movieList: [Movie]? {
         didSet{
             if movieList?.count == 0 {
-                self.emptyArrayLabel.isHidden = true
+                self.emptyArrayLabel.isHidden = false
             }else{
                 self.emptyArrayLabel.isHidden = true
             }
@@ -149,43 +149,6 @@ class CM_ProfilePresent: UIViewController {
             emptyArrayLabel.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor, constant: -20),
         ])
     }
-
-    
-    func deleteFavorite(completionHandler:@escaping(MovieLogin?,Int?,Error?)->Void){
-        let urlString = "\(CM_NetworkManager.shared.initialPath)account/\(CM_NetworkManager.shared.userName)/favorite?api_key=\(CM_NetworkManager.shared.apiKey)&session_id=\(CM_NetworkManager.shared.sesionID)"
-        
-        if let urlObject = URL(string: urlString){
-            var urlRequest = URLRequest(url: urlObject)
-            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            urlRequest.httpMethod = "POST"
-            let body: [String: Any] = [
-                "media_type": "movie",
-                "media_id": currentId,
-                "favorite": false
-            ]
-            
-            guard let httpBody = try? JSONSerialization.data(withJSONObject: body, options: []) else {
-                completionHandler(nil, nil, "error al convertir el json" as? Error)
-                return
-            }
-            
-            urlRequest.httpBody = httpBody
-            
-            let task = URLSession.shared.dataTask(with: urlRequest) { responseData, responseCode, responseError in
-                if let auxResponse = responseCode as? HTTPURLResponse {
-                    let _ = auxResponse.statusCode
-                }
-                guard let respuestaDiferente = responseData else {
-                    completionHandler(nil, responseCode.hashValue, responseError)
-                    return
-                }
-                if let json = try? JSONDecoder().decode(MovieLogin.self, from: respuestaDiferente){
-                    completionHandler(json,200,nil)
-                }
-            }
-            task.resume()
-        }
-    }
 }
 
 extension CM_ProfilePresent: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -226,7 +189,7 @@ extension CM_ProfilePresent: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let newId = movieList?[indexPath.row].id {
             self.currentId = newId
-            self.deleteFavorite { responseList, responseCode, responseError in
+            CM_NetworkManager.shared.deleteFavorite(currentId: currentId) { responseList, responseCode, responseError in
                 if let _ = responseList {
                     DispatchQueue.main.async {
                         self.deletedIDs.insert(self.movieList?[indexPath.row].id ?? 0)
