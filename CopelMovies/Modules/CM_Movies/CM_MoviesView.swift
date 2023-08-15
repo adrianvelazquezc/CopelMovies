@@ -88,7 +88,7 @@ extension CM_MoviesView: CM_MoviesViewProtocol {
         CM_ActivityIndicator.remove(parent: self.view)
     }
     
-    func notifyMovieList(list: [Pelicula], favoriteList: [Pelicula]) {
+    func notifyMovieList(list: [Movie], favoriteList: [Movie]) {
         self.ui?.movieList = list
         for favorite in favoriteList {
             ui?.favoriteMovieIDs.insert(favorite.id ?? 0)
@@ -96,7 +96,7 @@ extension CM_MoviesView: CM_MoviesViewProtocol {
         self.ui?.collectionView.reloadData()
         self.ui?.collectionView.layoutIfNeeded()
     }
-    func notifyMovieList(list: [Pelicula], favoriteList: [Pelicula], favoriteMovieIDs: Set<Int>) {
+    func notifyMovieList(list: [Movie], favoriteList: [Movie], favoriteMovieIDs: Set<Int>) {
         self.ui?.movieList = list
         self.ui?.favoriteList = favoriteList
         self.ui?.favoriteMovieIDs = favoriteMovieIDs
@@ -104,7 +104,7 @@ extension CM_MoviesView: CM_MoviesViewProtocol {
         self.ui?.collectionView.layoutIfNeeded()
     }
     
-    func notifyShowProfile(list: [Pelicula]) {
+    func notifyShowProfile(list: [Movie]) {
         self.presenter?.requestPresent(delegate: self, list: list)
     }
     

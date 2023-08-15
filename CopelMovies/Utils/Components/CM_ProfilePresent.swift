@@ -12,7 +12,7 @@ protocol CM_ProfilePresentDelegate {
 }
 class CM_ProfilePresent: UIViewController {
     var delegate: CM_ProfilePresentDelegate?
-    public var movieList: [Pelicula]? {
+    public var movieList: [Movie]? {
         didSet{
             if movieList?.count == 0 {
                 self.emptyArrayLabel.isHidden = true
@@ -151,7 +151,7 @@ class CM_ProfilePresent: UIViewController {
     }
 
     
-    func deleteFavorite(completionHandler:@escaping(PeliculaLogin?,Int?,Error?)->Void){
+    func deleteFavorite(completionHandler:@escaping(MovieLogin?,Int?,Error?)->Void){
         let urlString = "\(CM_NetworkManager.shared.initialPath)account/\(CM_NetworkManager.shared.userName)/favorite?api_key=\(CM_NetworkManager.shared.apiKey)&session_id=\(CM_NetworkManager.shared.sesionID)"
         
         if let urlObject = URL(string: urlString){
@@ -179,7 +179,7 @@ class CM_ProfilePresent: UIViewController {
                     completionHandler(nil, responseCode.hashValue, responseError)
                     return
                 }
-                if let json = try? JSONDecoder().decode(PeliculaLogin.self, from: respuestaDiferente){
+                if let json = try? JSONDecoder().decode(MovieLogin.self, from: respuestaDiferente){
                     completionHandler(json,200,nil)
                 }
             }

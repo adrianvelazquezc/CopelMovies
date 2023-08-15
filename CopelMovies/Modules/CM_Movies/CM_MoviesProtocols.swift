@@ -10,10 +10,10 @@ import Foundation
 protocol CM_MoviesViewProtocol: AnyObject {
     func showLoading()
     func dissmissLoading()
-    func notifyMovieList(list: [Pelicula], favoriteList: [Pelicula], favoriteMovieIDs: Set<Int>)
+    func notifyMovieList(list: [Movie], favoriteList: [Movie], favoriteMovieIDs: Set<Int>)
     func notifyFavoriteList()
     func notifyError(error: String, step: ListService)
-    func notifyShowProfile(list: [Pelicula])
+    func notifyShowProfile(list: [Movie])
     func notifyAddDeleteFavoriteList()
 }
 
@@ -27,22 +27,22 @@ protocol CM_MoviesInteractorProtocol: AnyObject {
 
 protocol CM_MoviesPresenterProtocol: AnyObject {
     func requestMovieList(gender: MoviesCategories)
-    func responseMovieList(_ list: [Pelicula])
+    func responseMovieList(_ list: [Movie])
     func requestMoviesDetails(movieId: Int, isFavoriteMovie: Bool)
     func requestFavoriteList()
-    func responseFavoriteList(list: [Pelicula])
+    func responseFavoriteList(list: [Movie])
     func requestDeleteSession()
     func responseDeletedSession()
     func requestFavoriteMovie(isFavorite: Bool, movieId: Int)
     func responseFavoriteMovie()
     func requestFavoritesWithPresent()
-    func responseFavoritesWithPresent(list: [Pelicula])
+    func responseFavoritesWithPresent(list: [Movie])
     func responseError(error: String, step: ListService)
-    func requestPresent(delegate: CM_ProfilePresentDelegate, list: [Pelicula])
+    func requestPresent(delegate: CM_ProfilePresentDelegate, list: [Movie])
 }
 
 protocol CM_MoviesRouterProtocol: AnyObject {
     func navigateMovieDetails(movieId: Int, isFavoriteMovie: Bool)
     func navigateCloseSession()
-    func navigatePresent(delegate: CM_ProfilePresentDelegate, list: [Pelicula])
+    func navigatePresent(delegate: CM_ProfilePresentDelegate, list: [Movie])
 }

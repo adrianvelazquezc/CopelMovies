@@ -12,7 +12,7 @@ protocol CM_DetailsViewProtocol: AnyObject {
     func notifyError(error: String, step: ListService)
     func showLoading()
     func dissmissLoading()
-    func notifyShowProfile(list: [Pelicula])
+    func notifyShowProfile(list: [Movie])
 }
 
 protocol CM_DetailsInteractorProtocol: AnyObject {
@@ -30,7 +30,7 @@ protocol CM_DetailsPresenterProtocol: AnyObject {
     func requestDeleteSession()
     func responseDeletedSession()
     func requestFavoritesWithPresent()
-    func responseFavoritesWithPresent(list: [Pelicula])
+    func responseFavoritesWithPresent(list: [Movie])
     func responseError(error: String, step: ListService)
 }
 

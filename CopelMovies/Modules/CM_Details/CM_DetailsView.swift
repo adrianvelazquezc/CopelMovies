@@ -29,7 +29,7 @@ class CM_DetailsView: UIViewController {
 }
 
 extension CM_DetailsView: CM_DetailsViewProtocol {
-    func notifyShowProfile(list: [Pelicula]) {
+    func notifyShowProfile(list: [Movie]) {
         let profileController = CM_ProfilePresent()
         profileController.movieList = list
         profileController.delegate = self

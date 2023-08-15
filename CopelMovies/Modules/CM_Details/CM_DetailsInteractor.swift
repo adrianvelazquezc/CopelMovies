@@ -63,7 +63,7 @@ extension CM_DetailsInteractor: CM_DetailsInteractorProtocol {
             
             let task =  URLSession.shared.dataTask(with: urlRequest) { responseData, responseCode, responseError in
                 if let respuestaDiferente = responseData {
-                    if let data = try? JSONDecoder().decode(PeliculaLogin.self, from: respuestaDiferente){
+                    if let data = try? JSONDecoder().decode(MovieLogin.self, from: respuestaDiferente){
                         if let success = data.success {
                             DispatchQueue.main.async {
                                 if success == true {
@@ -101,7 +101,7 @@ extension CM_DetailsInteractor: CM_DetailsInteractorProtocol {
                 urlRequest.httpMethod = "Delete"
                 let task = URLSession.shared.dataTask(with: urlRequest) { responseData, responseCode, responseError in
                     if let respuestaDiferente = responseData {
-                        if let data = try? JSONDecoder().decode(PeliculaLogin.self, from: respuestaDiferente){
+                        if let data = try? JSONDecoder().decode(MovieLogin.self, from: respuestaDiferente){
                             if let deleted = data.success {
                                 DispatchQueue.main.async {
                                     if deleted{

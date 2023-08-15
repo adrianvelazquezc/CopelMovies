@@ -20,8 +20,8 @@ class CM_MoviesViewUI: UIView{
     var navigationController: UINavigationController?
     let refreshControl = UIRefreshControl()
     
-    public var movieList: [Pelicula]?
-    public var favoriteList: [Pelicula] = []
+    public var movieList: [Movie]?
+    public var favoriteList: [Movie] = []
     public var favoriteMovieIDs: Set<Int> = []
     public var valueSelected: MoviesCategories = .popular
     public var currentMovieId = 0

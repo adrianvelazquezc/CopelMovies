@@ -18,13 +18,13 @@ public enum ListService {
 
 struct MoviesListResponse: Codable {
     let page: Int?
-    let results: [Pelicula]?
+    let results: [Movie]?
     let total_pages: Int?
     let total_results: Int?
     
 }
 
-public struct Pelicula: Codable{
+public struct Movie: Codable{
     let id: Int?
     let title: String?
     let urlPic: String?

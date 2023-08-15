@@ -19,7 +19,7 @@ extension CM_LoginInteractor: CM_LoginInteractorProtocol {
             urlRequest.httpMethod = "GET"
             let task = URLSession.shared.dataTask(with: urlRequest) { responseData, responseCode, responseError in
                 if let respuestaDiferente = responseData {
-                    if let data = try? JSONDecoder().decode(PeliculaToken.self, from: respuestaDiferente){
+                    if let data = try? JSONDecoder().decode(MovieToken.self, from: respuestaDiferente){
                         if let token = data.token {
                             CM_NetworkManager.shared.request_token = token
                             CM_NetworkManager.shared.userName = name
@@ -57,7 +57,7 @@ extension CM_LoginInteractor: CM_LoginInteractorProtocol {
             
             let task =  URLSession.shared.dataTask(with: urlRequest) { responseData, responseCode, responseError in
                 if let respuestaDiferente = responseData {
-                    if let data = try? JSONDecoder().decode(PeliculaLogin.self, from: respuestaDiferente){
+                    if let data = try? JSONDecoder().decode(MovieLogin.self, from: respuestaDiferente){
                         if let success = data.success {
                             DispatchQueue.main.async {
                                 if success == true {
@@ -100,7 +100,7 @@ extension CM_LoginInteractor: CM_LoginInteractorProtocol {
             
             let task =  URLSession.shared.dataTask(with: urlRequest) { responseData, responseCode, responseError in
                 if let respuestaDiferente = responseData {
-                    if let data = try? JSONDecoder().decode(PeliculaSession.self, from: respuestaDiferente){
+                    if let data = try? JSONDecoder().decode(MovieSession.self, from: respuestaDiferente){
                         if let success = data.success {
                             if success{
                                 DispatchQueue.main.async {

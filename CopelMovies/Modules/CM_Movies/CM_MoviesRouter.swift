@@ -24,7 +24,7 @@ extension CM_MoviesRouter: CM_MoviesRouterProtocol{
             navigationController.pushViewController(vc, animated: true )
         }
     }
-    func navigatePresent(delegate: CM_ProfilePresentDelegate, list: [Pelicula]) {
+    func navigatePresent(delegate: CM_ProfilePresentDelegate, list: [Movie]) {
         let profileController = CM_ProfilePresent()
         profileController.movieList = list
         profileController.delegate = delegate

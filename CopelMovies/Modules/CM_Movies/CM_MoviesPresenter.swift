@@ -11,7 +11,7 @@ class CM_MoviesPresenter {
     var interactor: CM_MoviesInteractorProtocol?
     weak var view: CM_MoviesViewProtocol?
     var router: CM_MoviesRouterProtocol?
-    var favorites: [Pelicula] = []
+    var favorites: [Movie] = []
     var currentGender: MoviesCategories?
 }
 
@@ -23,7 +23,7 @@ extension CM_MoviesPresenter: CM_MoviesPresenterProtocol {
         self.interactor?.fetchMovieList(gender: gender)
     }
     
-    func responseMovieList(_ list: [Pelicula]) {
+    func responseMovieList(_ list: [Movie]) {
         self.view?.dissmissLoading()
         var favoriteMovieIDs: Set<Int> = []
         for favorite in self.favorites {
@@ -41,7 +41,7 @@ extension CM_MoviesPresenter: CM_MoviesPresenterProtocol {
         self.interactor?.fetchFavoriteListMovies()
     }
     
-    func responseFavoriteList(list: [Pelicula]) {
+    func responseFavoriteList(list: [Movie]) {
         self.favorites = list
         self.view?.notifyFavoriteList()
     }
@@ -71,11 +71,11 @@ extension CM_MoviesPresenter: CM_MoviesPresenterProtocol {
         self.interactor?.fetchFavoritesWithPresent()
     }
     
-    func responseFavoritesWithPresent(list: [Pelicula]) {
+    func responseFavoritesWithPresent(list: [Movie]) {
         self.view?.dissmissLoading()
         self.view?.notifyShowProfile(list: list)
     }
-    func requestPresent(delegate: CM_ProfilePresentDelegate, list: [Pelicula]) {
+    func requestPresent(delegate: CM_ProfilePresentDelegate, list: [Movie]) {
         self.router?.navigatePresent(delegate: delegate, list: list)
     }
     

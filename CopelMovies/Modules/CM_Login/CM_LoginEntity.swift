@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PeliculaToken: Codable{
+struct MovieToken: Codable{
     let success: Bool?
     let token: String?
     
@@ -16,7 +16,7 @@ struct PeliculaToken: Codable{
         case token = "request_token"
     }
 }
-struct PeliculaLogin: Codable{
+struct MovieLogin: Codable{
     let success: Bool?
     
     enum CodingKeys: String, CodingKey{
@@ -24,7 +24,7 @@ struct PeliculaLogin: Codable{
     }
 }
 
-struct PeliculaSession: Codable{
+struct MovieSession: Codable{
     let success: Bool?
     let session_id: String?
     

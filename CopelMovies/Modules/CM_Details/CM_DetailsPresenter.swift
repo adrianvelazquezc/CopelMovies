@@ -12,7 +12,7 @@ class CM_DetailsPresenter {
     weak var view: CM_DetailsViewProtocol?
     var router: CM_DetailsRouterProtocol?
     var movieId = 0
-    var favorites: [Pelicula] = []
+    var favorites: [Movie] = []
 }
 
 
@@ -53,7 +53,7 @@ extension CM_DetailsPresenter: CM_DetailsPresenterProtocol {
         self.interactor?.fetchFavoritesWithPresent()
     }
     
-    func responseFavoritesWithPresent(list: [Pelicula]) {
+    func responseFavoritesWithPresent(list: [Movie]) {
         self.view?.dissmissLoading()
         self.view?.notifyShowProfile(list: list)
     }
