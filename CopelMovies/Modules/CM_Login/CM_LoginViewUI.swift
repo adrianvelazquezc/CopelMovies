@@ -88,7 +88,7 @@ class CM_LoginViewUI: UIView{
     }
     
     func setUI(){
-        self.backgroundColor =  #colorLiteral(red: 0.03991495073, green: 0.08235343546, blue: 0.1102337912, alpha: 1)
+        self.backgroundColor = CM_NetworkManager.shared.backgroundColor
         self.addSubview(containerView)
         containerView.addSubview(logoImageView)
         containerView.addSubview(userNameTextField)
@@ -143,7 +143,7 @@ extension CM_LoginViewUI: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         continueButton.isEnabled = (!(userNameTextField.text?.isEmpty ?? false) && !(userPasswordTextField.text?.isEmpty ?? false))
         if continueButton.isEnabled {
-            continueButton.backgroundColor =   #colorLiteral(red: 0.4548825622, green: 0.8329617977, blue: 0.4634124041, alpha: 1)
+            continueButton.backgroundColor =   CM_NetworkManager.shared.textColor
         } else {
             continueButton.backgroundColor =   #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         }

@@ -65,7 +65,7 @@ class CM_MoviesViewUI: UIView{
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor =  #colorLiteral(red: 0.03991495073, green: 0.08235343546, blue: 0.1102337912, alpha: 1)
+        collectionView.backgroundColor = CM_NetworkManager.shared.backgroundColor
         return collectionView
     }()
     
@@ -92,7 +92,7 @@ class CM_MoviesViewUI: UIView{
     }
     
     func setUI(){
-        self.backgroundColor =  #colorLiteral(red: 0.03991495073, green: 0.08235343546, blue: 0.1102337912, alpha: 1)
+        self.backgroundColor = CM_NetworkManager.shared.backgroundColor
         self.addSubview(navigationBar)
         self.addSubview(moviesSegmentedControl)
         self.addSubview(collectionView)

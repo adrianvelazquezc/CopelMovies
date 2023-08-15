@@ -46,7 +46,7 @@ class CM_CompanysCollectionViewCell: UICollectionViewCell {
         
         self.layer.cornerRadius = 75
         self.clipsToBounds = true
-        self.layer.borderColor =  #colorLiteral(red: 0.4548825622, green: 0.8329617977, blue: 0.4634124041, alpha: 1)
+        self.layer.borderColor = CM_NetworkManager.shared.textColor.cgColor
         self.layer.borderWidth = 3
         
         setupUIElements()

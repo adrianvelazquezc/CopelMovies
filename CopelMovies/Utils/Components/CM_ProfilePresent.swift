@@ -35,7 +35,7 @@ class CM_ProfilePresent: UIViewController {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         let attributedString = NSMutableAttributedString(string: "Profile", attributes: [
-            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.4548825622, green: 0.8329617977, blue: 0.4634124041, alpha: 1),
+            NSAttributedString.Key.foregroundColor: CM_NetworkManager.shared.textColor,
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .bold)
         ])
         label.attributedText = attributedString
@@ -55,7 +55,7 @@ class CM_ProfilePresent: UIViewController {
     public lazy var profileNameLabel: UILabel = {
         let label = UILabel()
         label.text = "@\(CM_NetworkManager.shared.userName)"
-        label.textColor =  #colorLiteral(red: 0.4548825622, green: 0.8329617977, blue: 0.4634124041, alpha: 1)
+        label.textColor = CM_NetworkManager.shared.textColor
         label.font = UIFont.systemFont(ofSize: 12, weight: .bold)
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -90,7 +90,7 @@ class CM_ProfilePresent: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor =  #colorLiteral(red: 0.03991495073, green: 0.08235343546, blue: 0.1102337912, alpha: 1)
+        collectionView.backgroundColor = CM_NetworkManager.shared.backgroundColor
         return collectionView
     }()
     
@@ -107,7 +107,7 @@ class CM_ProfilePresent: UIViewController {
     }
     
     func setUI(){
-        view.backgroundColor =  #colorLiteral(red: 0.03991495073, green: 0.08235343546, blue: 0.1102337912, alpha: 1)
+        view.backgroundColor = CM_NetworkManager.shared.backgroundColor
         view.addSubview(mainContainer)
         mainContainer.addSubview(titleLabel)
         mainContainer.addSubview(profilePicture)

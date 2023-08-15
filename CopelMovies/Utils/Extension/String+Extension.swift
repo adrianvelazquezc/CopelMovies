@@ -9,7 +9,7 @@ import UIKit
 
 public func getLabelText(text: String, font: UIFont = .systemFont(ofSize: 15, weight: .bold)) -> NSMutableAttributedString {
     let multipleAttributes: [NSAttributedString.Key : Any] = [
-        NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.4548825622, green: 0.8329617977, blue: 0.4634124041, alpha: 1),
+        NSAttributedString.Key.foregroundColor: CM_NetworkManager.shared.textColor,
         NSAttributedString.Key.font: font
     ]
     let attributedString = NSMutableAttributedString(string: text, attributes: multipleAttributes)

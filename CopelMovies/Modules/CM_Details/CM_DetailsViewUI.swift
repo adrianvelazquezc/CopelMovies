@@ -71,7 +71,7 @@ class CM_DetailsViewUI: UIView{
     private var starPicture: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.tintColor = #colorLiteral(red: 0.4548825622, green: 0.8329617977, blue: 0.4634124041, alpha: 1)
+        image.tintColor = CM_NetworkManager.shared.textColor
         image.isUserInteractionEnabled = true
         image.image = UIImage(systemName: "star.fill")
         return image
@@ -143,7 +143,7 @@ class CM_DetailsViewUI: UIView{
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor =  #colorLiteral(red: 0.03991495073, green: 0.08235343546, blue: 0.1102337912, alpha: 1)
+        collectionView.backgroundColor = CM_NetworkManager.shared.backgroundColor
         collectionView.tag = 0
         return collectionView
     }()
@@ -157,7 +157,7 @@ class CM_DetailsViewUI: UIView{
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor =  #colorLiteral(red: 0.03991495073, green: 0.08235343546, blue: 0.1102337912, alpha: 1)
+        collectionView.backgroundColor = CM_NetworkManager.shared.backgroundColor
         collectionView.tag = 1
         return collectionView
     }()
@@ -186,7 +186,7 @@ class CM_DetailsViewUI: UIView{
     }
     
     func setUI(){
-        self.backgroundColor =  #colorLiteral(red: 0.03991495073, green: 0.08235343546, blue: 0.1102337912, alpha: 1)
+        self.backgroundColor = CM_NetworkManager.shared.backgroundColor
         self.addSubview(navigationBar)
         self.addSubview(scrollView)
         scrollView.addSubview(movieTitleLabel)

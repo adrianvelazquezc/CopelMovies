@@ -49,7 +49,7 @@ class CM_MoviesCollectionViewCell: UICollectionViewCell {
     
     public var titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor =  #colorLiteral(red: 0.4548825622, green: 0.8329617977, blue: 0.4634124041, alpha: 1)
+        label.textColor = CM_NetworkManager.shared.textColor
         label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -59,7 +59,7 @@ class CM_MoviesCollectionViewCell: UICollectionViewCell {
     
     public var dateLabel: UILabel = {
         let label = UILabel()
-        label.textColor =  #colorLiteral(red: 0.4548825622, green: 0.8329617977, blue: 0.4634124041, alpha: 1)
+        label.textColor = CM_NetworkManager.shared.textColor
         label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -68,7 +68,7 @@ class CM_MoviesCollectionViewCell: UICollectionViewCell {
     
     public var averangeLabel: UILabel = {
         let label = UILabel()
-        label.textColor =  #colorLiteral(red: 0.4548825622, green: 0.8329617977, blue: 0.4634124041, alpha: 1)
+        label.textColor = CM_NetworkManager.shared.textColor
         label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         label.textAlignment = .right
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -98,7 +98,7 @@ class CM_MoviesCollectionViewCell: UICollectionViewCell {
     private var starPicture: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.tintColor = #colorLiteral(red: 0.4548825622, green: 0.8329617977, blue: 0.4634124041, alpha: 1)
+        image.tintColor = CM_NetworkManager.shared.textColor
         image.isUserInteractionEnabled = true
         image.image = UIImage(systemName: "star.fill")
         return image
