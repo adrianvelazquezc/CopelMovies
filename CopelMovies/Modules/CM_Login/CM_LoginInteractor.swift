@@ -64,7 +64,9 @@ extension CM_LoginInteractor: CM_LoginInteractorProtocol {
                                     self.authenticateToken()
                                 }
                                 else {
-                                        self.presenter?.responseError(error: "Hubo un problema")
+                                    if let error = data.status_message {
+                                        self.presenter?.responseError(error: error)
+                                    }
                                 }
                             }
                         }

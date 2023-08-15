@@ -94,7 +94,7 @@ extension CM_MoviesInteractor: CM_MoviesInteractorProtocol {
                 urlRequest.httpMethod = "Delete"
                 let task = URLSession.shared.dataTask(with: urlRequest) { responseData, responseCode, responseError in
                     if let respuestaDiferente = responseData {
-                        if let data = try? JSONDecoder().decode(MovieLogin.self, from: respuestaDiferente){
+                        if let data = try? JSONDecoder().decode(CloseSession.self, from: respuestaDiferente){
                             if let deleted = data.success {
                                 DispatchQueue.main.async {
                                     if deleted{
@@ -147,7 +147,9 @@ extension CM_MoviesInteractor: CM_MoviesInteractorProtocol {
                                     self.presenter?.responseFavoriteMovie()
                                 }
                                 else {
-                                    self.presenter?.responseError(error: "Hubo un error", step: .updateFavoriteMovie)
+                                    if let error = data.status_message {
+                                        self.presenter?.responseError(error: error, step: .updateFavoriteMovie)
+                                    }
                                 }
                             }
                         }

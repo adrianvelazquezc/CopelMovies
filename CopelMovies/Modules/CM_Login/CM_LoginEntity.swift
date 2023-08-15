@@ -18,9 +18,11 @@ struct MovieToken: Codable{
 }
 struct MovieLogin: Codable{
     let success: Bool?
+    let status_message: String?
     
     enum CodingKeys: String, CodingKey{
         case success = "success"
+        case status_message = "status_message"
     }
 }
 

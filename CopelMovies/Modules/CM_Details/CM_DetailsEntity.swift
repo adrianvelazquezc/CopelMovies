@@ -52,3 +52,11 @@ struct MovieDetails: Codable {
         case productionCompanies = "production_companies"
     }
 }
+
+public struct CloseSession: Codable{
+    let success: Bool?
+    
+    enum CodingKeys: String, CodingKey{
+        case success = "success"
+    }
+}
