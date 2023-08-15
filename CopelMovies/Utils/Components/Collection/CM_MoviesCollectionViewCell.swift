@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol CM_CollectionViewCellDelegateDelegate {
+protocol CM_MoviesCollectionViewCellDelegate {
     func favorite(isFavorite: Bool, id: Int)
 }
 
-class CM_CollectionViewCellDelegate: UICollectionViewCell {
-    public var delegate: CM_CollectionViewCellDelegateDelegate?
-    static let identifier = "CM_CollectionViewCellDelegate"
+class CM_MoviesCollectionViewCell: UICollectionViewCell {
+    public var delegate: CM_MoviesCollectionViewCellDelegate?
+    static let identifier = "CM_MoviesCollectionViewCell"
     public var currentId = 0
     
     var isFavorite = false {

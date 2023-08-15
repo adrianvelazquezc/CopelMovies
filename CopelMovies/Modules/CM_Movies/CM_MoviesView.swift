@@ -38,8 +38,8 @@ class CM_MoviesView: UIViewController {
 }
 
 extension CM_MoviesView: CM_MoviesViewProtocol {
-    func notifyAddDeleteFavoriteList(wasFavorite: Bool) {
-        if wasFavorite {
+    func notifyAddDeleteFavoriteList() {
+        if ((ui?.isFavorite) != nil) {
             if let currentMovieId = ui?.currentMovieId {
                 ui?.favoriteMovieIDs.insert(currentMovieId)
             }

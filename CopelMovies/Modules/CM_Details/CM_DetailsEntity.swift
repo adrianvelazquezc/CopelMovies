@@ -52,23 +52,3 @@ struct MovieDetails: Codable {
         case productionCompanies = "production_companies"
     }
 }
-
-struct URLVideosResponse: Codable {
-    var id: Int?
-
-    var results: [Result]?
-    struct Result: Codable {
-        var key: String?
-        var site: String?
-
-        enum CodingKeys: String, CodingKey {
-            case key = "key"
-            case site = "site"
-        }
-    }
-
-    enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case results = "results"
-    }
-}

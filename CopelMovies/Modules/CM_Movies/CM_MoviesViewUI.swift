@@ -25,6 +25,7 @@ class CM_MoviesViewUI: UIView{
     public var favoriteMovieIDs: Set<Int> = []
     public var valueSelected: MoviesCategories = .popular
     public var currentMovieId = 0
+    public var isFavorite = false
     
     lazy private var navigationBar: CM_NavigationBar = {
         let navigationBar = CM_NavigationBar()
@@ -60,7 +61,7 @@ class CM_MoviesViewUI: UIView{
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 10) / 2, height: 340)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(CM_CollectionViewCellDelegate.self, forCellWithReuseIdentifier: CM_CollectionViewCellDelegate.identifier)
+        collectionView.register(CM_MoviesCollectionViewCell.self, forCellWithReuseIdentifier: CM_MoviesCollectionViewCell.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -144,7 +145,7 @@ extension CM_MoviesViewUI: UICollectionViewDelegate, UICollectionViewDataSource 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CM_CollectionViewCellDelegate.identifier, for: indexPath) as? CM_CollectionViewCellDelegate {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CM_MoviesCollectionViewCell.identifier, for: indexPath) as? CM_MoviesCollectionViewCell {
             if let list = movieList?[indexPath.row] {
                 if favoriteMovieIDs.contains(list.id ?? 0) {
                     cell.isFavorite = true
@@ -194,9 +195,10 @@ extension CM_MoviesViewUI: CM_NavigationBarDelegate{
     }
 }
 
-extension CM_MoviesViewUI: CM_CollectionViewCellDelegateDelegate{
+extension CM_MoviesViewUI: CM_MoviesCollectionViewCellDelegate{
     func favorite(isFavorite: Bool, id: Int) {
         self.currentMovieId = id
+        self.isFavorite = isFavorite
         self.delegate?.notifyUpdateFavorite(isFavorite: isFavorite, movieId: id)
     }
 }

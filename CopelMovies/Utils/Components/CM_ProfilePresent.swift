@@ -86,7 +86,7 @@ class CM_ProfilePresent: UIViewController {
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 10) / 1.8, height: UIScreen.main.bounds.height < 667 ? (UIScreen.main.bounds.height / 2.0) : 340)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(CM_CollectionViewCellDelegate.self, forCellWithReuseIdentifier: CM_CollectionViewCellDelegate.identifier)
+        collectionView.register(CM_MoviesCollectionViewCell.self, forCellWithReuseIdentifier: CM_MoviesCollectionViewCell.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -194,7 +194,7 @@ extension CM_ProfilePresent: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CM_CollectionViewCellDelegate.identifier, for: indexPath) as? CM_CollectionViewCellDelegate {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CM_MoviesCollectionViewCell.identifier, for: indexPath) as? CM_MoviesCollectionViewCell {
             if let list = movieList?[indexPath.row] {
                 cell.favoriteButton.tintColor = .red
                 cell.favoriteButton.isUserInteractionEnabled = false
