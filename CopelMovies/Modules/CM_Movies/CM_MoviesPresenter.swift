@@ -11,6 +11,8 @@ class CM_MoviesPresenter {
     var interactor: CM_MoviesInteractorProtocol?
     weak var view: CM_MoviesViewProtocol?
     var router: CM_MoviesRouterProtocol?
+    var favorites: [Pelicula] = []
+    var currentGender: MoviesCategories?
 }
 
 
@@ -23,11 +25,15 @@ extension CM_MoviesPresenter: CM_MoviesPresenterProtocol {
     
     func responseMovieList(_ list: [Pelicula]) {
         self.view?.dissmissLoading()
-        print("pasar a la vista de peliculas")
+        var favoriteMovieIDs: Set<Int> = []
+        for favorite in self.favorites {
+            favoriteMovieIDs.insert(favorite.id ?? 0)
+        }
+        view?.notifyMovieList(list: list, favoriteList: self.favorites, favoriteMovieIDs: favoriteMovieIDs)
     }
     
     func requestMoviesDetails(movieId: Int, isFavoriteMovie: Bool) {
-        print("ir al detalle de la pelicula")
+        self.router?.navigateMovieDetails(movieId: movieId, isFavoriteMovie: isFavoriteMovie)
     }
     
     func requestFavoriteList() {
@@ -36,7 +42,8 @@ extension CM_MoviesPresenter: CM_MoviesPresenterProtocol {
     }
     
     func responseFavoriteList(list: [Pelicula]) {
-        print("marcar desmarcar favorito")
+        self.favorites = list
+        self.view?.notifyFavoriteList()
     }
     
     func requestDeleteSession() {
@@ -46,7 +53,7 @@ extension CM_MoviesPresenter: CM_MoviesPresenterProtocol {
     
     func responseDeletedSession() {
         self.view?.dissmissLoading()
-        print("cerrar sesion")
+        self.router?.navigateCloseSession()
     }
     
     func requestFavoriteMovie(isFavorite: Bool, movieId: Int) {
@@ -65,11 +72,14 @@ extension CM_MoviesPresenter: CM_MoviesPresenterProtocol {
     
     func responseFavoritesWithPresent(list: [Pelicula]) {
         self.view?.dissmissLoading()
-        print("hacer el present del perfil")
+        self.view?.notifyShowProfile(list: list)
+    }
+    func requestPresent(delegate: CM_ProfilePresentDelegate, list: [Pelicula]) {
+        self.router?.navigatePresent(delegate: delegate, list: list)
     }
     
     func responseError(error: String, step: ListService) {
         self.view?.dissmissLoading()
-        print("manejar error")
+        self.view?.notifyError(error: error, step: step)
     }
 }

@@ -15,6 +15,7 @@ class CM_NetworkManager {
     public var request_token = ""
     public var sesionID = ""
     public var initialPath = "https://api.themoviedb.org/3/"
+    public var firstURL: String = "https://image.tmdb.org/t/p/w500"
     
     private init() {}
 

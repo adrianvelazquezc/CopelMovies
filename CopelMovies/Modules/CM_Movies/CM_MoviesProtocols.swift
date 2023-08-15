@@ -10,6 +10,11 @@ import Foundation
 protocol CM_MoviesViewProtocol: AnyObject {
     func showLoading()
     func dissmissLoading()
+    func notifyMovieList(list: [Pelicula], favoriteList: [Pelicula], favoriteMovieIDs: Set<Int>)
+    func notifyFavoriteList()
+    func notifyError(error: String, step: ListService)
+    func notifyShowProfile(list: [Pelicula])
+    func notifyAddDeleteFavoriteList(wasFavorite: Bool)
 }
 
 protocol CM_MoviesInteractorProtocol: AnyObject {
@@ -33,8 +38,11 @@ protocol CM_MoviesPresenterProtocol: AnyObject {
     func requestFavoritesWithPresent()
     func responseFavoritesWithPresent(list: [Pelicula])
     func responseError(error: String, step: ListService)
+    func requestPresent(delegate: CM_ProfilePresentDelegate, list: [Pelicula])
 }
 
 protocol CM_MoviesRouterProtocol: AnyObject {
-    
+    func navigateMovieDetails(movieId: Int, isFavoriteMovie: Bool)
+    func navigateCloseSession()
+    func navigatePresent(delegate: CM_ProfilePresentDelegate, list: [Pelicula])
 }

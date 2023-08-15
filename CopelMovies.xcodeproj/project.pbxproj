@@ -20,7 +20,7 @@
 		CE4852A52A8AD72100C998EC /* CM_LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48529D2A8AD72100C998EC /* CM_LoginEntity.swift */; };
 		CE4852AA2A8AD78400C998EC /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852A92A8AD78400C998EC /* String+Extension.swift */; };
 		CE4852AC2A8AD85900C998EC /* CMT_NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852AB2A8AD85900C998EC /* CMT_NetworkManager.swift */; };
-		CE4852AE2A8AD88B00C998EC /* CMT_ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852AD2A8AD88B00C998EC /* CMT_ActivityIndicator.swift */; };
+		CE4852AE2A8AD88B00C998EC /* CM_ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852AD2A8AD88B00C998EC /* CM_ActivityIndicator.swift */; };
 		CE4852B02A8AD99200C998EC /* CM_TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852AF2A8AD99200C998EC /* CM_TextField.swift */; };
 		CE4852B92A8AE29500C998EC /* CM_MoviesViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852B12A8AE29500C998EC /* CM_MoviesViewUI.swift */; };
 		CE4852BA2A8AE29500C998EC /* CM_MoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852B22A8AE29500C998EC /* CM_MoviesPresenter.swift */; };
@@ -30,6 +30,9 @@
 		CE4852BE2A8AE29500C998EC /* CM_MoviesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852B62A8AE29500C998EC /* CM_MoviesInteractor.swift */; };
 		CE4852BF2A8AE29500C998EC /* CM_MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852B72A8AE29500C998EC /* CM_MoviesView.swift */; };
 		CE4852C02A8AE29500C998EC /* CM_MoviesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852B82A8AE29500C998EC /* CM_MoviesEntity.swift */; };
+		CE4852C42A8AE86900C998EC /* CM_ProfilePresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852C32A8AE86900C998EC /* CM_ProfilePresent.swift */; };
+		CE4852C62A8AE88700C998EC /* CM_NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852C52A8AE88700C998EC /* CM_NavigationBar.swift */; };
+		CE4852C92A8AE8F200C998EC /* CM_MoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4852C82A8AE8F200C998EC /* CM_MoviesCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +51,7 @@
 		CE48529D2A8AD72100C998EC /* CM_LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_LoginEntity.swift; sourceTree = "<group>"; };
 		CE4852A92A8AD78400C998EC /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CE4852AB2A8AD85900C998EC /* CMT_NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMT_NetworkManager.swift; sourceTree = "<group>"; };
-		CE4852AD2A8AD88B00C998EC /* CMT_ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMT_ActivityIndicator.swift; sourceTree = "<group>"; };
+		CE4852AD2A8AD88B00C998EC /* CM_ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CM_ActivityIndicator.swift; sourceTree = "<group>"; };
 		CE4852AF2A8AD99200C998EC /* CM_TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_TextField.swift; sourceTree = "<group>"; };
 		CE4852B12A8AE29500C998EC /* CM_MoviesViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_MoviesViewUI.swift; sourceTree = "<group>"; };
 		CE4852B22A8AE29500C998EC /* CM_MoviesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_MoviesPresenter.swift; sourceTree = "<group>"; };
@@ -58,6 +61,9 @@
 		CE4852B62A8AE29500C998EC /* CM_MoviesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_MoviesInteractor.swift; sourceTree = "<group>"; };
 		CE4852B72A8AE29500C998EC /* CM_MoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_MoviesView.swift; sourceTree = "<group>"; };
 		CE4852B82A8AE29500C998EC /* CM_MoviesEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CM_MoviesEntity.swift; sourceTree = "<group>"; };
+		CE4852C32A8AE86900C998EC /* CM_ProfilePresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CM_ProfilePresent.swift; sourceTree = "<group>"; };
+		CE4852C52A8AE88700C998EC /* CM_NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CM_NavigationBar.swift; sourceTree = "<group>"; };
+		CE4852C82A8AE8F200C998EC /* CM_MoviesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CM_MoviesCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +182,10 @@
 		CE4852A72A8AD75800C998EC /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CE4852AD2A8AD88B00C998EC /* CMT_ActivityIndicator.swift */,
+				CE4852C72A8AE8B900C998EC /* Collection */,
+				CE4852C52A8AE88700C998EC /* CM_NavigationBar.swift */,
+				CE4852AD2A8AD88B00C998EC /* CM_ActivityIndicator.swift */,
+				CE4852C32A8AE86900C998EC /* CM_ProfilePresent.swift */,
 				CE4852AF2A8AD99200C998EC /* CM_TextField.swift */,
 			);
 			path = Components;
@@ -188,6 +197,14 @@
 				CE4852A92A8AD78400C998EC /* String+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		CE4852C72A8AE8B900C998EC /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				CE4852C82A8AE8F200C998EC /* CM_MoviesCollectionViewCell.swift */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,15 +288,18 @@
 				CE4852BD2A8AE29500C998EC /* CM_MoviesMain.swift in Sources */,
 				CE48527D2A8AC9C100C998EC /* AppDelegate.swift in Sources */,
 				CE4852BA2A8AE29500C998EC /* CM_MoviesPresenter.swift in Sources */,
-				CE4852AE2A8AD88B00C998EC /* CMT_ActivityIndicator.swift in Sources */,
+				CE4852AE2A8AD88B00C998EC /* CM_ActivityIndicator.swift in Sources */,
 				CE4852BE2A8AE29500C998EC /* CM_MoviesInteractor.swift in Sources */,
 				CE4852BC2A8AE29500C998EC /* CM_MoviesProtocols.swift in Sources */,
 				CE4852B02A8AD99200C998EC /* CM_TextField.swift in Sources */,
 				CE4852A52A8AD72100C998EC /* CM_LoginEntity.swift in Sources */,
 				CE4852A32A8AD72100C998EC /* CM_LoginInteractor.swift in Sources */,
+				CE4852C92A8AE8F200C998EC /* CM_MoviesCollectionViewCell.swift in Sources */,
 				CE4852B92A8AE29500C998EC /* CM_MoviesViewUI.swift in Sources */,
 				CE4852C02A8AE29500C998EC /* CM_MoviesEntity.swift in Sources */,
 				CE4852AA2A8AD78400C998EC /* String+Extension.swift in Sources */,
+				CE4852C62A8AE88700C998EC /* CM_NavigationBar.swift in Sources */,
+				CE4852C42A8AE86900C998EC /* CM_ProfilePresent.swift in Sources */,
 				CE4852A12A8AD72100C998EC /* CM_LoginProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
