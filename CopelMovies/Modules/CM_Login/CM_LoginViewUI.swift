@@ -31,13 +31,13 @@ class CM_LoginViewUI: UIView{
     }()
     
     lazy var userNameTextField: CM_TextField = {
-        let textField = CM_TextField(placeholder: "Username", defaultValue: "adrianvelazquezc")
+        let textField = CM_TextField(placeholder: "Username")
         textField.delegate = self
         return textField
     }()
 
     lazy var userPasswordTextField: CM_TextField = {
-        let textField = CM_TextField(placeholder: "Password", defaultValue: "sU.!JEBT.j.S4Ru")
+        let textField = CM_TextField(placeholder: "Password")
         textField.delegate = self
         return textField
     }()
